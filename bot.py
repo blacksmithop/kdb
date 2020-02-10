@@ -3,7 +3,7 @@ from os import environ
 from discord import Embed, Color
 bot = commands.AutoShardedBot(command_prefix='?', pm_help=None, description='bot', shard_count=4)
 
-initial_extensions = ["cogs.admin","cogs.fox","cogs.chatter]
+initial_extensions = ["cogs.admin","cogs.fox","cogs.chatter"]
 #all the init stuff goes here until I figure out Sharding better
 def initlialize():
     for extension in initial_extensions:
