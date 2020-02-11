@@ -1,7 +1,7 @@
 from discord.ext import commands
 from os import environ
 from discord import Embed, Color
-bot = commands.AutoShardedBot(command_prefix='.', pm_help=None, description='bot', shard_count=4)
+bot = commands.AutoShardedBot(command_prefix='?', pm_help=None, description='bot', shard_count=4)
 
 initial_extensions = ["cogs.admin","cogs.fox","cogs.chatter"]
 #all the init stuff goes here until I figure out Sharding better
