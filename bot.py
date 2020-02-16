@@ -17,7 +17,10 @@ async def halo(ctx):
 
 @bot.command()
 async def say(ctx,*,args):
-    await ctx.send(args)
+    if ctx.author.id==199129403458977792:
+        await ctx.send(args)
+        await ctx.message.delete()
+ 
 
 @bot.event
 async def on_ready():
