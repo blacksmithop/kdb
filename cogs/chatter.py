@@ -2,6 +2,8 @@ import json
 from random import choice
 from discord.ext import commands
 import discord
+from googletrans import Translator
+translator = Translator()
 
 with open('cogs/responses.json', 'r') as r:
     responses = json.load(r)['responses']
@@ -32,6 +34,10 @@ class solla(commands.Cog):
                     else:'''
         await channel.send(shorthand[arg])
 
-
+    @commands.command(name='m', pass_context=True)
+    @commands.guild_only()
+    async def mtrans(self, ctx,*,arg):
+        mal = translator.translate(arg, dest="ml")
+        await ctx.send(mal.text)
 def setup(bot):
     bot.add_cog(solla(bot))
