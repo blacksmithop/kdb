@@ -9,7 +9,6 @@ bot = commands.AutoShardedBot(command_prefix='?', pm_help=None, description='bot
 
 initial_extensions: List[str] = ["cogs.admin", "cogs.fox", "cogs.chatter", "cogs.ascii"]
 
-
 def initlialize():
     for extension in initial_extensions:
         bot.load_extension(extension)
