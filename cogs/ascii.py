@@ -2,7 +2,7 @@ import asyncio
 import discord
 import random
 from   discord.ext import commands
-from   Addons import DL
+from   cogs.Addons import DL
 import urllib
 
 def setup(bot):
