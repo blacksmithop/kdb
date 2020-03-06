@@ -5,7 +5,7 @@ from typing import List
 
 from discord.ext import commands
 
-bot = commands.AutoShardedBot(command_prefix='.', pm_help=None, description='bot', shard_count=4)
+bot = commands.AutoShardedBot(command_prefix='?', pm_help=None, description='bot', shard_count=4)
 
 initial_extensions: List[str] = ["cogs.admin", "cogs.fox", "cogs.chatter", "cogs.ascii"]
 
