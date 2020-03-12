@@ -42,7 +42,7 @@ class solla(commands.Cog):
     
     @commands.command(name='h', pass_context=True)
     @commands.guild_only()
-    async def mtrans(self, ctx,*,arg):
+    async def htrans(self, ctx,*,arg):
         hin = translator.translate(arg, dest="hi")
         await ctx.send(hin.text)
         
