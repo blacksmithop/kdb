@@ -39,5 +39,11 @@ class solla(commands.Cog):
     async def mtrans(self, ctx,*,arg):
         mal = translator.translate(arg, dest="ml")
         await ctx.send(mal.text)
+        
+    @commands.command(name='h', pass_context=True)    
+    @commands.guild_only()
+    async def htrans(self, ctx,*,arg):
+        hin = translator.translate(arg, dest="hi")
+        await ctx.send(hin.text)
 def setup(bot):
     bot.add_cog(solla(bot))
