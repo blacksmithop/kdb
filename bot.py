@@ -7,7 +7,7 @@ from discord.ext import commands
 
 bot = commands.AutoShardedBot(command_prefix='.k', pm_help=None, description='bot', shard_count=4)
 
-initial_extensions: List[str] = ["cogs.admin", "cogs.fox", "cogs.chatter", "cogs.ascii"]
+initial_extensions: List[str] = ["cogs.admin", "cogs.fox", "cogs.chatter", "cogs.ascii","cogs.ranker"]
 
 def initlialize():
     for extension in initial_extensions:
