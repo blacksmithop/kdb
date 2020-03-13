@@ -7,7 +7,7 @@ from discord.ext import commands
 
 bot = commands.AutoShardedBot(command_prefix='.k', pm_help=None, description='bot', shard_count=4)
 
-initial_extensions: List[str] = ["cogs.admin", "cogs.ascii", "cogs.chatter", "cogs.fox", "cogs.ranker", "cogs.urban"]
+initial_extensions: List[str] = ["cogs.admin", "cogs.ascii", "cogs.chatter", "cogs.fox", "cogs.ranker"]
 
 def initlialize():
     for extension in initial_extensions:
@@ -28,12 +28,12 @@ async def say(ctx, *, args):
         await ctx.send(args)
         await ctx.message.delete()
 
-'''
+
 @bot.event
 async def on_ready():
     print(f"Bot id:{bot.user.id}")
     print(f"Shard count: {bot.shard_count}")
-'''
+
 
 @bot.event
 async def on_member_join(member):
