@@ -1,4 +1,3 @@
-
 from imdb import IMDb
 from discord import Embed
 from re import search
@@ -60,4 +59,3 @@ def handle(movie_name, ia, movie_embed,response):
         # movie_embed.add_field(name="\u200b", value=info, inline=False)
         break
     return movie_embed
-
