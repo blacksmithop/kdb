@@ -75,7 +75,7 @@ class OKP(object):
 '''
 
 from discord.ext import commands
-from cogs.OKP import OKP
+from kdb.cogs.OKP import OKP
 
 
 class kali(commands.Cog):
