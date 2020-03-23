@@ -14,9 +14,8 @@ class movies(commands.Cog):
     @commands.guild_only()
     async def get_movie(self, ctx, args):
         ia = IMDb()
-        response = google_images_download.googleimagesdownload()
         movie_embed = Embed()
-        movie_embed = handle(args, ia, movie_embed,response)
+        movie_embed = handle(args, ia, movie_embed)
         await ctx.send(embed=movie_embed)
 
 
@@ -24,7 +23,7 @@ def setup(bot):
     bot.add_cog(movies(bot))
 
 
-def handle(movie_name, ia, movie_embed,response):
+def handle(movie_name, ia, movie_embed):
     # say('Searching top five results for.  %s' %movie_name)
     movie_query = ia.search_movie(movie_name)
     del movie_query[5:]
