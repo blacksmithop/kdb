@@ -4,3 +4,4 @@ googletrans
 aiohttp
 beautifulsoup4
 imdbpy
+wikipedia
