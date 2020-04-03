@@ -39,13 +39,13 @@ async def on_ready():
 
 @bot.event
 async def on_member_join(member):
-    channel = bot.get_channel(620985606042026005)
+    channel = bot.get_channel(618270738247581708)
     await channel.send(f"💪😎 {member.name} has joined, Welcome!")
 
 
 @bot.event
 async def on_member_leave(member):
-    channel = bot.get_channel(620985606042026005)
+    channel = bot.get_channel(618270738247581708)
     await channel.send(f"{member.name} has left, sed aayi")
 
 bot.run(environ['DISCORD_TOKEN'])
