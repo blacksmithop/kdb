@@ -40,7 +40,7 @@ async def on_ready():
 @bot.event
 async def on_member_join(member):
     channel = bot.get_channel(618270738247581708)
-    await channel.send(f"💪😎 {member.name} has joined, Welcome!")
+    await channel.send(f" വരണം വരണം Mr {member.name}")
 
 
 @bot.event
