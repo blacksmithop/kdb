@@ -7,7 +7,12 @@ bot = commands.Bot(command_prefix='..', description='''Bump''', self_bot=True)
 @bot.event
 async def on_ready():
     print("running")
-
+@bot.command()
+async def alive(ctx):
+    while True:
+        print("Alive")
+        sleep(30)
+        
 @bot.command()
 async def hi(ctx):
     BUMP = Embed()
