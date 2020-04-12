@@ -20,6 +20,6 @@ async def hi(ctx):
         await ctx.send(embed=BUMP)
         sleep(1)
         await ctx.send("!d bump")
-        sleep(7200)
+        sleep(300)
 
 bot.run(environ['token'],bot=False)
