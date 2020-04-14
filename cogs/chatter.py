@@ -22,7 +22,7 @@ class solla(commands.Cog):
     async def parachil(self, ctx):
         await ctx.send(choice(responses))
         
-    @commands.command(name='.', pass_context=True)
+    @commands.command(name='??', pass_context=True)
     @commands.guild_only()
     async def talker(self, ctx):
         await ctx.send(choice(english))
