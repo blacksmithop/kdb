@@ -22,6 +22,7 @@ async def on_ready():
     print(f"Shard count: {bot.shard_count}")
     initlialize()
     await bot.change_presence(status=Status.idle, activity=Game("with 🔥"))
+    
 def isOwner(id):
     return id == 199129403458977792
 
