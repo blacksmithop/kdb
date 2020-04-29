@@ -1,6 +1,5 @@
 from subprocess import check_output
 
-
 def pinghost(host):
     p = check_output(["ping", "-c", "1", host])
     p=p.decode('utf-8').split('\n')
@@ -9,10 +8,8 @@ def pinghost(host):
         res.append(p[i])
     return res
 
-
 from discord.ext import commands
 from discord import Embed
-
 
 class ping(commands.Cog):
     def __init__(self, bot):
@@ -29,7 +26,6 @@ class ping(commands.Cog):
         resp.add_field(name="\u200b", value=res[1], inline=False)
         resp.add_field(name="\u200b", value=res[2], inline=False)
         await ctx.send(embed=resp)
-
 
 def setup(bot):
     bot.add_cog(ping(bot))

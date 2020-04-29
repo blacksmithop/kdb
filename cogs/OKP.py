@@ -3,7 +3,7 @@ from discord import Embed
 from time import sleep
 
 
-class OKP(object):
+class okp(object):
     player_num: int
 
     def __init__(self, player_num=2, test=None):
@@ -66,17 +66,7 @@ class OKP(object):
             return self.row_pointer
         else:
             return self.col_pointer
-
-
-'''
-   async def botsay(self,ctx, inp):
-        sleep(1.5)
-        await ctx.send(inp)
-'''
-
 from discord.ext import commands
-from kdb.cogs.OKP import OKP
-
 
 class kali(commands.Cog):
     def __init__(self, bot):
