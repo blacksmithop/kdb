@@ -1,4 +1,6 @@
-from os import environ
+token = "NDA0MjcxNTQ5NDg3NTEzNjAw.Xp55wA.Nk-8tma91E4a7ym7wFoVrdayd3M"
+
+#from os import environ
 from discord.ext import commands
 from random import choice
 
@@ -22,4 +24,5 @@ async def on_message(message):
     if 'abhi' in message.content or "ABHI" in message.content:
         await message.add_reaction(choice(emoji))
 
-bot.run(environ['DISCORD_TOKEN'])
+#bot.run(environ['DISCORD_TOKEN'])
+bot.run(token)

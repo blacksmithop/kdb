@@ -5,3 +5,4 @@ aiohttp
 beautifulsoup4
 imdbpy
 wikipedia
+flask
