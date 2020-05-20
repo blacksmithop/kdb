@@ -2,26 +2,27 @@
 from os import environ as e
 import discord
 from typing import List
-from discord import Embed,Game,Status,Colour
+from discord import Embed,Game,Status,Colour,Member
 from discord.ext import commands
 from random import randrange as r
-bot = commands.AutoShardedBot(command_prefix=e["PREFIX"], pm_help=None, description='Discord Bot for r/Kerala', shard_count=1)
+from asyncio import TimeoutError
+bot = commands.AutoShardedBot(command_prefix=e["PREFIX"], pm_help=None, description='Discord Bot for r/Kerala', shard_count=4)
 
-initial_extensions: List[str] = ["cogs.webtest","cogs.wiki","cogs.movies", "cogs.globaltrans", "cogs.admin", "cogs.ascii","cogs.chatter", "cogs.fox", "cogs.urban", "cogs.memegen"]
-    
+initial_extensions: List[str] = ["cogs.economy","cogs.webtest","cogs.wiki","cogs.movies", "cogs.globaltrans", "cogs.admin", "cogs.ascii","cogs.chatter", "cogs.fox", "cogs.urban", "cogs.memegen"]
+
 def initlialize():
     for extension in initial_extensions:
         try:
             bot.load_extension(extension)
         except:
             print(f"Cannot load {extension}")
-            
+          
 @bot.event
 async def on_ready():
     print(f"Bot id:{bot.user.id}")
     print(f"Shard count: {bot.shard_count}")
     initlialize()
-    await bot.change_presence(status=Status.idle, activity=Game("with 🔥"))
+    await bot.change_presence(status=Status.idle, activity=Game(".khelp"))
     
 def isOwner(id):
     return id == 199129403458977792
@@ -46,7 +47,12 @@ async def ext(ctx, action, cog):
             except:
                COG.description = f"Could not Load cog: {cog}"
     await ctx.send(embed=COG)
-    
+
+from ast import literal_eval as l
+from requests import get
+from random import shuffle as s
+
+   
 bot.remove_command("help")
 @bot.command()
 async def help(ctx):
@@ -64,9 +70,11 @@ async def help(ctx):
         "🎬 Movies 🎞\nGet details from IMDb\n.kmovie",
         "🍾UrbanDictionary🍼\nGet UD definitions\n.kdefine word",
         "📱Ping📲\n.kping url",
-        "📃Wikipedia📕\nGet Wikipedia page\n.kpage query"]
+        "📃Wikipedia📕\nGet Wikipedia page\n.kpage query",
+        "❓Trivia\n.ktrivia ✅"
+        ]
 
-    p = [[0,4],[5,9],[10,13]]
+    p = [[0,4],[5,9],[10,14]]
     def createpage(i):
         des = ""
         for i in range(p[i][0],p[i][1]+1):
@@ -124,10 +132,6 @@ async def say(ctx, *, args):
     if ctx.author.id == 199129403458977792:
         await ctx.send(args)
         await ctx.message.delete()
-        
-@bot.event
-async def on_member_join(member):
-    channel = bot.get_channel(618270738247581708)
-    await channel.send(f" വരണം വരണം {member.mention}")
+
 
 bot.run(e['DISCORD_TOKEN'])
