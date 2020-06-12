@@ -7,3 +7,4 @@ imdbpy
 wikipedia
 flask
 redispy
+pypresence
